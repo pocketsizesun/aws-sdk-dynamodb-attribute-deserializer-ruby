@@ -16,13 +16,13 @@ module Aws
       def translate(arg)
         type, value = arg.to_a.first
         case type
-        when 'N' then value.to_f
+        when 'N' then value.to_s
         when 'L'
           value.map { |item| translate(item) }
         when 'SS'
           Set.new(value)
         when 'NS'
-          Set.new(value.map(&:to_f))
+          Set.new(value.map(&:to_s))
         when 'M'
           value.transform_values { |item| translate(item) }
         when 'S' then value.to_s
