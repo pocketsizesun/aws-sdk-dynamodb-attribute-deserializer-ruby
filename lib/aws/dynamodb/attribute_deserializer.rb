@@ -13,8 +13,6 @@ module Aws
         hash.transform_values { |v| translate(v) }
       end
 
-      private
-
       def translate(arg)
         type, value = arg.to_a.first
         case type
