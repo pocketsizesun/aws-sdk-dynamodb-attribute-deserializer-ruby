@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "aws-sdk-dynamodb-attribute-deserializer"
-  spec.version       = '1.0'
+  spec.version       = '1.0.2'
   spec.authors       = ["Julien D."]
   spec.email         = ["julien@pocketsizesun.com"]
 

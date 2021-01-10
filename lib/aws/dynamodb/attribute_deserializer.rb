@@ -26,9 +26,9 @@ module Aws
         when 'M'
           value.transform_values { |item| translate(item) }
         when 'S' then value.to_s
-        when 'B' then Base64.decode64(value)
+        when 'B' then StringIO.new(Base64.decode64(value))
         when 'BS'
-          Set.new(value.map { |item| Base64.decode64(item) })
+          Set.new(value.map { |item| StringIO.new(Base64.decode64(item)) })
         when 'NULL' then nil
         when 'BOOL' then value
         else value
