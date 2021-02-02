@@ -14,9 +14,10 @@ module Aws
       end
 
       def translate(arg)
-        type, value = arg.to_a.first
+        type = arg.keys[0]
+        value = arg[type]
         case type
-        when 'N' then value.to_s
+        when 'N' then BigDecimal(value)
         when 'L'
           value.map { |item| translate(item) }
         when 'SS'

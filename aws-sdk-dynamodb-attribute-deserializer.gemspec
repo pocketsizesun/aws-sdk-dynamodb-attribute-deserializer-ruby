@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "aws-sdk-dynamodb-attribute-deserializer"
-  spec.version       = '1.0.2'
+  spec.version       = '1.1.0'
   spec.authors       = ["Julien D."]
   spec.email         = ["julien@pocketsizesun.com"]
 
@@ -27,4 +27,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "rspec", "~> 3.2"
+  spec.add_development_dependency 'profile'
+  spec.add_development_dependency 'memory_profiler'
 end
